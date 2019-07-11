@@ -1,0 +1,91 @@
+body {
+    height: 100vh;
+    position: relative;
+}
+
+.messenger {
+    color: #ffffff;
+}
+
+.setting {
+    font-size: 42px;
+    color: #0000008c;
+}
+
+.avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+}
+
+.height-container {
+    height: 100%;
+}
+
+.height-row {
+    height: 100%;
+}
+
+.line i {
+    cursor: pointer;
+}
+
+.line img {
+    cursor: pointer;
+}
+
+.search {
+    border-radius: 4px;
+    background-color: #f5f5f5;
+}
+
+.search button {
+    background: none;
+    border: none;
+    box-sizing: border-box;
+}
+
+.search button i {
+    color: #b3afb9;
+    font-size: 24px;
+}
+
+.search input {
+    border: none;
+    background-color: #f5f5f5;
+}
+
+.search input:focus {
+    box-shadow: none;
+    background-color: #f5f5f5;
+}
+
+.list-friend {
+    font-size: 20px;
+    font-weight: bold;
+    color: #000000ad;
+}
+
+.list-chatting .user-is-online {
+    color: #a0a0a0;
+}
+
+.list-chatting .online {
+    color: rgba(43, 182, 43, 0.945);
+}
+
+.list-chatting .user-id {
+    background-color: #a0a0a0;
+    height: 50px;
+    width: 50px;
+    font-size: 15px;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+.list-chatting .user-friend {
+    border-bottom: 2px solid #4a90e2;
+}
