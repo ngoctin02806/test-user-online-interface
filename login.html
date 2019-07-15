@@ -8,20 +8,23 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="./assets/style/style.css">
+    <link rel="stylesheet" href="./assets/style/home.css">
+    <link rel="stylesheet" href="./font-awesome-4.7.0/css/font-awesome.min.css">
     <title>Login - Socket IO</title>
+    
 </head>
 
 <body>
     <div class="container">
-        <div class="row">
+        <div class="row" id="login-form-test">
             <div class="col-md-12 d-flex justify-content-center align-items-center login">
-                <form>
+                <form id="form-login">
                     <div class="form-group">
                         <label for="exampleInputEmail1" class="mb-3 mr-3">User ID</label>
                         <div class="d-flex">
-                            <input type="email" class="form-control" id="exampleInputEmail1"
+                            <input type="text" class="form-control" id="exampleInputEmail1"
                             aria-describedby="emailHelp" placeholder="Enter User Id">
-                            <button type="submit" class="btn btn-primary ml-3">Login</button>
+                            <button type="submit" class="btn btn-primary ml-3" id="login">Login</button>
                         </div>
                         <small id="emailHelp" class="form-text text-muted ">We'll never share your User ID with
                                 anyone else.</small>
@@ -29,8 +32,39 @@
                 </form>
             </div>
         </div>
+        <div class="row" id="room-chat">
+            <div class="col-sm-12 col-md-1 d-flex flex-column align-items-center justify-content-between header-message">
+                <img class="messenger" width="38" height="38" src="./assets/img/mess.png" alt="messenger">
+                <div class="d-flex flex-column align-items-center line header-message">
+                    <a href="">
+                        <i class="fa fa-cog setting mb-3" aria-hidden="true"></i>
+                    </a>
+                    <img class="avatar mb-3" src="./assets/img/avatar-male-1.jpg" alt="">
+                    <button class="btn btn-primary logout p-1" id="btn-logout">Logout</button>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-2">
+                <form>
+                    <div class="form-group d-flex search">
+                        <button type="submit">
+                            <i class="fa fa-search" aria-hidden="true"></i>
+                        </button>
+                        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Search">
+                    </div>
+                </form>
+                <div class="mt-4 list-friend">
+                    LIST FRIEND
+                    <i class="fa fa-user-o ml-3" aria-hidden="true"></i>
+                </div>
+                <hr class="mb-4" />
+                <div class="list-chatting" id="list-friend-online"></div>
+            </div>
+        </div>
     </div>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.dev.js">
+    
+    </script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
@@ -40,7 +74,8 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
-    <script src="./assets/js/script.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="./assets/js/script-login.js"></script>
 </body>
 
 </html>
