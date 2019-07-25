@@ -1,15 +1,15 @@
-var socket = io("http://192.168.11.13:8000");
+var socket = io("http://192.168.11.4:8000");
 
 $(document).ready(function() {
   $("#login-form-test").show();
   $("#room-chat").hide();
 
   const arrToken = [
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEiLCJuYW1lIjoiSm9obiBEb2UiLCJpYXQiOjE1MTYyMzkwMjJ9.rDiipwWjjbCi8_ZJUrtE7KR6Kk_-YKo1eFnpmF0Rjx8",
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjIiLCJuYW1lIjoiSm9obiBEb2UiLCJpYXQiOjE1MTYyMzkwMjJ9.nFVVjyH5chB8F_dVhEjVr75Fu1vcY__SXD1JhY3x-OE",
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjMiLCJuYW1lIjoiSm9obiBEb2UiLCJpYXQiOjE1MTYyMzkwMjJ9.9yVAddKidGWrpTY-8fjnN15k1CXWUCZOiiSsj5od1qk",
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjQiLCJuYW1lIjoiSm9obiBEb2UiLCJpYXQiOjE1MTYyMzkwMjJ9.W1PWTci5urYrJxJ8IAwJZKNgUQtx5PayCmz4UW18BK8"
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Il9SbkoybS1kMlp1LUYyODR4YWVJbmN0RkxxeGhWNThXcmFDZmVBSzQiLCJuYW1lIjoiSm9obiBEb2UiLCJpYXQiOjE1MTYyMzkwMjJ9.6b5KJWEjEeCe2hscO1MEo8SGKLs7oDd9plww-Ki6Qq0",
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IkhIaW5XWkR1elVSZi1Jcjh6eEFyWTIxWHBqS0JwME5wandKTTFlLWYiLCJuYW1lIjoiSm9obiBEb2UiLCJpYXQiOjE1MTYyMzkwMjJ9.sq7lF3L45p9N4Spi_Nvj3qdSjUtpT5Dnn5raU45pbL4"
   ];
+
+  const user_id_arr = ["_RnJ2m-d2Zu-F284xaeInctFLqxhV58WraCfeAK4", "HHinWZDuzURf-Ir8zxArY21XpjKBp0NpjwJM1e-f"];
 
   var data = "";
   $("#form-login").submit(function(e) {
@@ -17,13 +17,13 @@ $(document).ready(function() {
     data = $("#exampleInputEmail1").val();
 
     socket.emit("user-connect", {
-      user_id: data
+      user_id: user_id_arr[parseInt(data) - 1]
     });
 
     let config = {
       url: "/friends_status",
       method: "get",
-      baseURL: "http://192.168.11.13:8000",
+      baseURL: "http://192.168.11.4:8000",
       headers: {
         Authorization: "Bearer " + arrToken[parseInt(data) - 1]
       }
@@ -44,12 +44,12 @@ $(document).ready(function() {
     let config1 = {
       url: "/user_status",
       method: "post",
-      baseURL: "http://192.168.11.13:8000",
+      baseURL: "http://192.168.11.4:8000",
       headers: {
         Authorization: "Bearer " + arrToken[parseInt(data) - 1]
       },
       data: {
-        user_id: data
+        user_id: user_id_arr[parseInt(data) - 1]
       }
     };
 
@@ -75,7 +75,7 @@ $(document).ready(function() {
     let config = {
       url: "/friends_status",
       method: "get",
-      baseURL: "http://192.168.11.13:8000",
+      baseURL: "http://192.168.11.4:8000",
       headers: {
         Authorization: "Bearer " + arrToken[parseInt(data) - 1]
       }
@@ -101,7 +101,7 @@ $(document).ready(function() {
     let config = {
       url: "/friends_status",
       method: "get",
-      baseURL: "http://192.168.11.13:8000",
+      baseURL: "http://192.168.11.4:8000",
       headers: {
         Authorization: "Bearer " + arrToken[parseInt(data) - 1]
       }
